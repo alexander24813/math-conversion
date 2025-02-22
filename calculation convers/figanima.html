@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mathematical Conversions</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url(webui.jpg);
+        }
+
+        .container {
+            display: flex;
+            align-items: stretch;
+        }
+
+        .transparent-box {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 20px 0 0 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            width: 350px;
+            height: 400px;
+        }
+
+        h2 {
+            color: white;
+            text-align: center;
+        }
+
+        .buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .row {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        /* Style for Labels as Buttons */
+        label.btn, label.btn1 {
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.3);
+            color: white;
+            font-weight: bold;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            display: inline-block;
+        }
+
+        .input-box {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            height: 50px;
+            border-radius: 30px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.3);
+            color: white;
+            font-weight: bold;
+            font-size: 30px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 10px;
+            background: #a70f33;
+            color: white;
+            border: none;
+            height: 50px;
+            border-radius: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .white-box {
+            background: white;
+            width: 350px;
+            height: 400px;
+            border-radius: 0 20px 20px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        input::placeholder {
+            color: white;
+            font-style: bold;
+            font-size: 20px;
+            text-align: center;
+            opacity: 0.2;
+        }
+
+        /* Hover and Active Effects */
+        .submit-btn:hover {
+            background: rgba(179, 78, 130, 0.5);
+        }
+        .submit-btn:active {
+            transform: scale(0.95);
+            box-shadow: 0 2px 5px rgba(6, 6, 6, 0.1);
+        }
+
+        /* Active State for Selected Labels */
+        input[type="radio"]:checked + label {
+            background: rgba(255, 255, 255, 0.7);
+            color: #a70f33;
+            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.5); 
+        }
+
+        /* Cursor pointer for all labels */
+        label.btn, label.btn1 {
+            cursor: pointer;
+        }
+
+        /* Hover and active effect */
+        label.btn:hover, label.btn1:hover {
+            background: rgba(255, 255, 255, 0.5);
+            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.5);
+        }
+
+        label.btn:active, label.btn1:active {
+            transform: scale(0.95);
+            box-shadow: 0 2px 5px rgba(255, 255, 255, 0.3);
+        }
+        .fom1{
+            color: #a70f33;
+            font-size: 20px;
+            padding-bottom: 30%;
+            
+        }
+        .fom2{
+            padding-top: 20%;
+            color: #a70f33;
+            font-size: 50px;
+            padding-bottom: 20%;
+            
+        }
+        .input-box::placeholder {
+            color: #ffffff;  /* Changes the text color */
+            font-style: bold;  /* Makes it italic */
+            font-size: 20px;  /* Adjusts font size */
+            text-align: center;
+            opacity: 0.5;  /* Adjusts transparency */
+}
+
+       
+            
+
+        
+        .out{
+            align-items: center;
+            align-content: center;
+        }
+        #img{
+            margin-top: 40%;
+            margin-left: 40%;
+            margin-bottom: 30px;
+        }
+        #too{margin-left: 5%;}
+
+        /* Responsive Design */
+        @media (max-width: 800px) {
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                background-image: url(smui.jpg);
+            }
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .white-box {
+                border-radius: 0 0 20px 20px;
+                width: 350px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="transparent-box">
+            <h2>MATHEMATICAL CONVERSIONS</h2>
+            <div class="buttons">
+                <div class="row">
+                    <input type="radio" name="fromTo" id="from" value="from" hidden>
+                    <label class="btn" for="from">FROM</label>
+                    
+                    <input type="radio" name="fromTo" id="to" value="to" hidden>
+                    <label class="btn1" for="to">TO</label>
+                </div>
+                <div class="row">
+                    <input type="radio" name="operation" id="log" value="log" hidden>
+                    <label class="btn" for="log">LOG</label>
+                    
+                    <input type="radio" name="operation" id="sin" value="sin" hidden>
+                    <label class="btn" for="sin">SIN</label>
+                    
+                    <input type="radio" name="operation" id="cos" value="cos" hidden>
+                    <label class="btn" for="cos">COS</label>
+                    
+                    <input type="radio" name="operation" id="tan" value="tan" hidden>
+                    <label class="btn" for="tan">TAN</label>
+                </div>
+            </div>
+            <input type="number" class="input-box" id="entry" placeholder="Enter Number">
+            <button class="submit-btn" id="hsub">SUBMIT</button>
+            <h2 class="out fom1" id="fom"></h2>
+        </div>
+        <div class="white-box">
+            <div class="out">
+                
+                
+                <h2 class="fom2" id="too"></h2>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
